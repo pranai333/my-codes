@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <table id="table" border="1px" cellspacing="0">
+        <tr><th>emplyno</th><th>emplyname</th><th>salary</th><th>Department</th></tr>
+    {% for e in data%}
+       <tr><td>{{e.empno}}</td><td>{{e.empname}}</td><td>{{e.salary}}</td><td>{{e.department.dptname}}</td>
+        <td><a href="{% url 'update1url' e.empno %}">update</a></td>
+        <td><a href="{% url 'delete1url' e.empno %}">delete</a></td></tr>
+    {% endfor %}
+    <tr><td colspan="2" align="center">Total_salary</td><td>{{sum}}</td></tr>
+    <tr><td colspan="2" align="center">Average_salary</td><td>{{avg}}</td></tr>
+</table>
+</body>
+</html>

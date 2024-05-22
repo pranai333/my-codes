@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+</head>
+<body>
+        
+        <form action="" method="post">
+                {% csrf_token %}
+                {% for e in data %}
+        
+            <input type="text" value="{{e.empno}}" name="i1"><br><br>
+            <input type="text" value="{{e.empname}}" name="i2"><br><br>
+            <input type="text" value="{{e.salary}}" name="i3"><br><br>
+           
+                <select name="i4" id="">
+                    {% for d in data2%}
+                        <option value="{{d.dptno}}">{{d.dptname }}</option>
+                    {% endfor %}
+                </select><br><br>
+           
+            <input type="submit">
+            {% endfor %}
+
+        </form>
+
+</body>
+</html>

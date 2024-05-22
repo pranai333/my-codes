@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content%}
+    <form action="" method="post">
+        {% csrf_token %}
+        <div id="box">
+        <label style="color: white; font-size:larger;" for="">{{data.username.label}}</label>{{data.username}} <br>
+            {% for error in data.username.errors %}
+                <span style="color: red;">{{ error }}</span><br>
+            {% endfor %}<br>
+        <label style="color: white; font-size:larger;"  for="">{{data.password1.label}}</label>{{data.password1}} <br>
+            {% for error in data.password1.errors %}
+                <span style="color: red;">{{ error }}</span><br>
+            {% endfor %}<br>
+        <label style="color: white; font-size:larger;"  for="">{{data.password2.label}}</label>{{data.password2}} <br><br>
+            {% for error in data.password2.errors %}
+                <span style="color: red;">{{ error }}</span><br>
+            {% endfor %}<br>
+        <input type="submit" value="signup">
+        </div>
+    </form>
+{% endblock %}

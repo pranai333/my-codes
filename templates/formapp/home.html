@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block content%}
+<style>
+    #box{
+        color: rgb(164, 19, 19);
+        font-size: xx-large;
+    }
+</style>
+    <a id="box"href="{% url 'inserturl' %}">Insert</a>
+    <a id="box"href="{% url 'selecturl' 1 %}">Select</a>
+    <a id="box" href="{% url 'emplogouturl' %}">Logout</a>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select</title>
+    <style>
+        .images{
+            width: 170px;
+            height: 240px;
+            float: left;
+        }
+        #extra{
+            width: 120px;
+            display: inline-block;
+            margin-top: 200px;
+            margin-left: 500px;
+        }
+        .a{
+            color: white;
+            background-color:red;
+            display: inline-block;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    {% for i in data %}
+        <div class="images">
+        <a href="{% url 'detailurl' i.empno%}"><img src="{{i.images.url}}" alt="" width="150px" height="120px"></a>
+        <p>{{i.empno}}</p>
+        <p>{{i.empname}}</p>
+        <p>{{i.salary}}</p>
+        
+    </div>
+    {% endfor %}
+    <div id="extra">
+        {% if data.has_previous %}
+        <a href="{% url 'selecturl' data.previous_page_number %}" class="a">Previous</a>
+        {% endif %}
+        
+        {% if data.has_next %}
+        <a href="{% url 'selecturl' data.next_page_number %}" class="a">Next</a>
+        {% endif %}
+    </div>
+</body>
+</html>

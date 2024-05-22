@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cache</title>
+</head>
+<body>
+    {% for i in data %}
+        <div>
+        <img src="{{i.images.url}}" alt="" height="100px" width="50px">
+        <p>{{i.empno}} {{i.empname}}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>

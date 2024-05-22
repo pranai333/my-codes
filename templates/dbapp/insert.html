@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token%}
+        <label for="">Employeenumber</label><input type="text" name="empno"><br><br>
+        <label for="">Employeename</label><input type="text" name="empname"><br><br>
+        <label for="">Employeesalary</label><input type="text" name="esal"><br><br>
+        <label for="">Department</label>
+        <select name="edpt" id="">
+            {% for e in data %}
+                <option value="{{e.dptno}}">{{e.dptname}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit">
+    </form>
+</body>
+</html>

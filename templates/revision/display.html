@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display</title>
+</head>
+<body>
+    <table border="1" cellspacing="0">
+        <tr><th>EmployeeNo</th><th>EmployeeName</th><th>salary</th></tr>
+        {% for e in rev%}
+            <tr><td>{{e.emplyno}}</td><td>{{e.emplyname}}</td><td>{{e.salary}}</td><td><a href="{% url 'updateurl' e.emplyno %}">update</a></td><td><a href="{% url 'deleteurl' e.emplyno %}">delete</a></td></tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

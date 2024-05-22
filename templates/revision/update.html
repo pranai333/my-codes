@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+</head>
+<body>
+    {% for e in data %}
+    <form action="" method="post">
+        {%csrf_token%}
+        <input type="text" value="{{e.emplyno}}" name="i1"><br><br>
+        <input type="text" value="{{e.emplyname}}" name="i2"><br><br>
+        <input type="text" value="{{e.salary}}" name="i3"><br><br>
+        <input type="submit" value="update">
+    
+    </form>
+    {% endfor %}
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox" name="" id="">
+    <input type="checkbox" name="" id="">
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cbvdelete</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <h1>do you really want to delete the employee {{object}}?</h1>
+        <input type="submit" value="confirm">
+    </form>
+</body>
+</html>

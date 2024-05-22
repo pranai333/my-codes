@@ -1,0 +1,40 @@
+body{
+    background-color: #092327;
+}
+#content{
+    display: flex;
+    justify-content: center;
+    height: 2cm;
+    text-align: center;
+    background-color: #00A9A5;
+    color:#28262C;
+    font-size: 20px;
+}
+#box{
+    display: block;
+    text-align: center;
+    margin-top: 100px;
+}
+#i1{
+    width: 200px;
+    height: 40px;
+    font-size: xx-large;
+
+}
+#i2{
+    width: 200px;
+    height: 40px;
+    font-size: xx-large;
+}
+#btn{
+    width: 100px;
+    height: 40px;
+    background-color: #90C2E7;
+    border: none;
+    border-radius: 5px;
+}
+h4{
+    font-size: xx-large;
+    color:white;
+    text-align: center;
+}

@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    
+</head>
+<body>
+    <div id="content">
+        <h1>Vcube Applications</h1>
+    </div>
+    <form action="" method="post">
+    <div id="box">
+        {% csrf_token %}
+        <input type="text" name="i1" id="i1"><br><br>
+        <input type="text" id="i2" name="i2"><br><br>
+        <input type="submit" id="btn">
+    </div>
+    <h4>{{answer}}</h4>
+</form>
+
+</body>
+</html>

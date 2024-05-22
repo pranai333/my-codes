@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study Questions</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color:white;
+            display:flex;
+            justify-content: center;
+            align-content: center;
+        }
+        #qa{
+            background-color:#818cbe;
+            width: 80%;
+            padding-top: 20px;
+            margin-top: 30px;
+            padding: 25px 10px;
+            margin-bottom: 50px;
+            box-shadow: 0px 0px 10px 10px #3d4258;
+        }
+        .questions{
+            margin: 50px 50px 50px 50px;
+            font-size: x-large;
+
+        }
+        .questions h3{
+            color:#172A3A;
+
+        }
+        .answer{
+            color:#004346;
+            display:grid;
+            grid-template-columns: repeat(4,1fr);
+            row-gap: 20px;
+        }
+        .btn{
+            margin-left: 850px;
+            margin-top: 50px;
+            width: 100px;
+            height: 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: larger;
+            font-weight: 500;
+        }
+        .btn:hover{
+            background-color: #004346;
+            color: white;
+        }
+        .btn:active{
+            background-color: rgb(17, 17, 126);
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="qa">
+        <h1>welcome to the test{{user.user_name}}</h1>
+        <form action="{% url 'scoreurl'%}" method="post">
+            {%csrf_token%}
+            {% for e in ques %}
+            <div class="questions">
+                <h3>{{e.text}}</h3>
+                <div class="answer">
+                    <input type="radio" name="{{e.text}}" id="" value="{{e.option1}}"><label for="">{{e.option1}}</label>
+                    <input type="radio" name="{{e.text}}" id="" value="{{e.option2}}"><label for="">{{e.option2}}</label>
+                    <input type="radio" name="{{e.text}}" id="" value="{{e.option3}}"><label for="">{{e.option3}}</label>
+                    <input type="radio" name="{{e.text}}" id="" value="{{e.option4}}"><label for="">{{e.option4}}</label>
+                </div>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div> 
+</body>
+</html>

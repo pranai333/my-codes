@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator2</title>
+</head>
+<body>
+    <div>
+        <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="i1"><br><br>
+        <input type="text" name="i2"><br><br>
+        <button name="add" value="add">add</button>
+        <button name="sub" value="sub">sub</button>
+        <button name="mul" value="mul">mul</button>
+        <button name="div" value="div">div</button>
+        
+    </div>
+</form>
+    {% if action == "Addition" %}
+        <h3 style="color: blue;">{{action }} {{result}}</h3>
+    {% elif action == "Subtraction" %}  
+    <h3 style="color:blueviolet;">{{action }} of {{input1}} and {{input2}} is </h3>
+    <h3>{{result}}</h3>  
+    {% elif action == "Division"%}
+        <h3 style="color:brown;">{{action }} {{result}}</h3> 
+    {% else %}
+        <h3 style="color:chartreuse;">{{action }} {{result}}</h3> 
+    {%endif%}    
+ 
+
+
+</body>
+</html>
